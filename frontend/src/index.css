@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    @apply bg-surface-950 text-slate-100 font-sans antialiased;
+    background-image: 
+      radial-gradient(ellipse at 20% 50%, rgba(98, 114, 243, 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(98, 114, 243, 0.05) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-shield-700 rounded-full;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface-900 border border-white/5 rounded-xl p-5;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  }
+
+  .card-glow {
+    @apply card;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(98,114,243,0.1);
+  }
+
+  .btn-primary {
+    @apply bg-shield-600 hover:bg-shield-500 text-white font-semibold px-4 py-2.5 rounded-lg transition-all duration-200 flex items-center gap-2 text-sm;
+    box-shadow: 0 0 20px rgba(98,114,243,0.3);
+  }
+
+  .btn-secondary {
+    @apply bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white font-medium px-4 py-2.5 rounded-lg transition-all duration-200 flex items-center gap-2 text-sm border border-white/10;
+  }
+
+  .btn-danger {
+    @apply bg-red-900/50 hover:bg-red-800/70 text-red-400 hover:text-red-300 font-medium px-4 py-2.5 rounded-lg transition-all duration-200 flex items-center gap-2 text-sm border border-red-500/20;
+  }
+
+  .input {
+    @apply bg-surface-800 border border-white/10 rounded-lg px-4 py-2.5 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-shield-500 focus:ring-1 focus:ring-shield-500/50 transition-all duration-200 w-full text-sm;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-citizen { @apply bg-blue-900/40 text-blue-300 border border-blue-500/30; }
+  .badge-officer { @apply bg-green-900/40 text-green-300 border border-green-500/30; }
+  .badge-admin { @apply bg-amber-900/40 text-amber-300 border border-amber-500/30; }
+  .badge-super { @apply bg-shield-900/60 text-shield-300 border border-shield-500/40; }
+  .badge-external { @apply bg-cyan-900/40 text-cyan-300 border border-cyan-500/30; }
+
+  .status-open { @apply bg-blue-900/30 text-blue-300 border border-blue-500/20; }
+  .status-in_progress { @apply bg-amber-900/30 text-amber-300 border border-amber-500/20; }
+  .status-resolved { @apply bg-green-900/30 text-green-300 border border-green-500/20; }
+  .status-closed { @apply bg-slate-900/30 text-slate-400 border border-slate-500/20; }
+
+  .alert-high { @apply border-l-4 border-red-500 bg-red-950/30; }
+  .alert-medium { @apply border-l-4 border-amber-500 bg-amber-950/20; }
+  .alert-low { @apply border-l-4 border-blue-500 bg-blue-950/20; }
+
+  .nav-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-200 text-sm font-medium cursor-pointer;
+  }
+
+  .nav-link.active {
+    @apply bg-shield-600/20 text-shield-300 border border-shield-500/20;
+  }
+
+  .section-header {
+    @apply text-xl font-bold text-white mb-1;
+  }
+
+  .section-sub {
+    @apply text-sm text-slate-500;
+  }
+}
