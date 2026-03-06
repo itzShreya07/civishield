@@ -5,6 +5,7 @@ import DashboardPage from './pages/DashboardPage'
 import IssuesPage from './pages/IssuesPage'
 import AuditLogsPage from './pages/AuditLogsPage'
 import AlertsPage from './pages/AlertsPage'
+import PermissionsPage from './pages/PermissionsPage'
 import Layout from './components/Layout'
 
 function ProtectedRoute({ children, requiredRoles }) {
@@ -49,6 +50,7 @@ function App() {
                                 </ProtectedRoute>
                             }
                         />
+                        <Route path="permissions" element={<PermissionsPage />} />
                     </Route>
                     <Route path="*" element={<Navigate to="/dashboard" replace />} />
                 </Routes>

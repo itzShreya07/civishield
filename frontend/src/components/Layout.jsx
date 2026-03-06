@@ -2,7 +2,7 @@ import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import {
     ShieldIcon, DashboardIcon, IssuesIcon,
-    AuditIcon, AlertIcon, LogoutIcon, ZoneIcon
+    AuditIcon, AlertIcon, LogoutIcon, ZoneIcon, PermissionsIcon
 } from './Icons'
 
 export default function Layout() {
@@ -27,6 +27,7 @@ export default function Layout() {
     const navItems = [
         { path: '/dashboard', label: 'Dashboard', icon: DashboardIcon },
         { path: '/issues', label: 'Issues', icon: IssuesIcon },
+        { path: '/permissions', label: 'Permissions', icon: PermissionsIcon },
         ...((['DepartmentAdmin', 'SuperAdmin'].includes(user?.role)) ? [
             { path: '/audit', label: 'Audit Logs', icon: AuditIcon },
         ] : []),

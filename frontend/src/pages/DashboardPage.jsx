@@ -5,6 +5,7 @@ import {
     ShieldIcon, AlertIcon, IssuesIcon, AuditIcon,
     ZoneIcon, ServerIcon, RefreshIcon, ClockIcon
 } from '../components/Icons'
+import SecurityMetrics from '../components/SecurityMetrics'
 
 const STAT_COLORS = {
     Citizen: 'from-blue-600/20 to-blue-700/10 border-blue-500/20',
@@ -126,6 +127,11 @@ export default function DashboardPage() {
                     color="bg-red-900/20 border-red-500/20"
                 />
             </div>
+
+            {/* Security Metrics Card — Feature 3 */}
+            {(['DepartmentAdmin', 'SuperAdmin'].includes(user.role)) && (
+                <SecurityMetrics />
+            )}
 
             {/* Role Permissions Card */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
